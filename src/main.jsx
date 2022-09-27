@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter , RouterProvider } from "react-router-dom "
 import Layout from './components/Layout'
-
+import Nuevoclientes from './Pages/Nuevoclientes'
 
 const router = createBrowserRouter ( [ 
 {
@@ -12,7 +12,7 @@ element : < Layout />,
 children: [
   {
     path: "/nosotros",
-    element: <h1>Nosostros</h1>
+    element: <Nuevoclientes/>
   }
 ]
 
