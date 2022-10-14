@@ -1,6 +1,8 @@
-
+import { useNavigate , Form , redirect } from 'react-router-dom'
 
 function Cliente( { cliente }) {
+
+  const navigate = useNavigate()
 
 const { nombre , empresa , email , telefono , id  } = cliente
 
@@ -23,16 +25,23 @@ const { nombre , empresa , email , telefono , id  } = cliente
             <button
             type="button"
             className="text-blue-600 hover.text-blue-700 uppercase font-bold  text-xs"
+            onClick= { () => navigate( `/clientes/${id}/editar` )}
+
+            
             >
                 Editar 
             </button>
 
-            <button
-            type="button"
-            className="text-red-600 hover.text-red-700 uppercase font-bold  text-xs"
+           <Form 
+            method='post'
+           >
+           <button
+              type="button"
+              className="text-red-600 hover.text-red-700 uppercase font-bold  text-xs"
             >
-                Editar 
+                ELIMINAR 
             </button>
+           </Form>
         </td>
 
 

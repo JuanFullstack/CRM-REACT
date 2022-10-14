@@ -4,9 +4,9 @@ import './index.css'
 import { createBrowserRouter , RouterProvider } from "react-router-dom "
 import Layout from './components/Layout'
 import Nuevoclientes , { action as nuevoclienteAction   } from './Pages/Nuevoclientes'
-
 import Index  , { loader as clientesLoader } from './Pages/Index'
 import ErrorPage from './components/ErrorPage'
+import EditarCliente , { loader as editarClienteLoader  , action as editarClienteAction }  from './Pages/EditarCliente'
 
 
 
@@ -26,8 +26,23 @@ children: [
   {
     path: "/clientes/nuevo",
     element: <Nuevoclientes/>,
-    action:nuevoclienteAction 
+    action:nuevoclienteAction ,
+    errorElement : <ErrorPage />
+  },
+  {
+    path: '/clientes/:ClienteId/editar',
+    element: < EditarCliente  />,
+    loader : editarClienteLoader,
+    action : editarClienteAction,
+    errorElement : <ErrorPage />
+    
   }
+
+
+
+
+
+
 ]}])
 
 
