@@ -7,6 +7,7 @@ import Nuevoclientes , { action as nuevoclienteAction   } from './Pages/Nuevocli
 import Index  , { loader as clientesLoader } from './Pages/Index'
 import ErrorPage from './components/ErrorPage'
 import EditarCliente , { loader as editarClienteLoader  , action as editarClienteAction }  from './Pages/EditarCliente'
+import { action as eliminarClienteAction } from './components/Cliente'
 
 
 
@@ -36,6 +37,11 @@ children: [
     action : editarClienteAction,
     errorElement : <ErrorPage />
     
+  },
+  {
+   path: '/clientes/:clienteId/eliminar',
+   action : eliminarClienteAction,
+   errorElement : <ErrorPage />
   }
 
 
